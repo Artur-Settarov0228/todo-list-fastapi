@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card auth-card">
+        <header class="card__header">
+          <p class="eyebrow">Task Manager</p>
+          <h1>Registratsiya</h1>
+          <p class="subtitle">Yangi akkaunt yarating</p>
+        </header>
+
+        <form id="register-form" class="auth-form">
+          <label>
+            Username
+            <input id="username" type="text" required minlength="3" maxlength="32" />
+          </label>
+          <label>
+            Parol
+            <input id="password" type="password" required minlength="4" maxlength="128" />
+          </label>
+          <button type="submit">Ro'yxatdan o'tish</button>
+        </form>
+
+        <p class="auth-alt">
+          Akkauntingiz bormi? <a href="/">Login qiling</a>
+        </p>
+        <p id="message" class="status-text"></p>
+      </section>
+    </main>
+    <script src="/static/auth.js"></script>
+    <script src="/static/register.js"></script>
+  </body>
+</html>

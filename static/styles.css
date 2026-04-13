@@ -41,6 +41,14 @@ body {
   animation: fade-in 350ms ease-out;
 }
 
+.tasks-card {
+  width: min(980px, 100%);
+}
+
+.auth-card {
+  width: min(520px, 100%);
+}
+
 .card__header h1 {
   margin: 4px 0 6px;
   font-size: clamp(30px, 5vw, 44px);
@@ -59,6 +67,79 @@ body {
 .subtitle {
   margin: 0;
   color: var(--muted);
+}
+
+.tasks-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.auth-form {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 8px;
+  color: #41473e;
+  font-size: 14px;
+}
+
+.auth-form input {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px 12px;
+  font-size: 15px;
+}
+
+.auth-form button {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: var(--accent-strong);
+}
+
+.auth-alt {
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.auth-alt a {
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.status-text {
+  min-height: 24px;
+  margin-top: 10px;
+  color: #8d3415;
+}
+
+.ghost-btn {
+  border: 1px solid var(--line);
+  background: #fff8eb;
+  color: #5f6459;
+  border-radius: 11px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ghost-btn:hover {
+  background: #f7ecd8;
 }
 
 .todo-form {
@@ -100,9 +181,9 @@ body {
 
 .todo-item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #fff;
@@ -120,6 +201,13 @@ body {
   text-decoration: line-through;
 }
 
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.todo-item select,
 .todo-item button {
   border: 1px solid #e2ddd3;
   background: #faf8f0;
@@ -127,8 +215,10 @@ body {
   color: #5d6358;
   padding: 8px 10px;
   cursor: pointer;
+  font-size: 13px;
 }
 
+.todo-item select:hover,
 .todo-item button:hover {
   background: #f4efe2;
 }
@@ -139,6 +229,19 @@ body {
   padding: 18px;
   border: 1px dashed var(--line);
   border-radius: 12px;
+}
+
+.status-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.status-grid article h3 {
+  margin: 0 0 8px;
+  color: #3e4637;
+  font-size: 16px;
 }
 
 @keyframes fade-in {
@@ -168,11 +271,19 @@ body {
     padding: 18px;
   }
 
+  .tasks-head {
+    flex-direction: column;
+  }
+
   .todo-form {
     grid-template-columns: 1fr;
   }
 
   .todo-form button {
     padding: 13px 12px;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
   }
 }
