@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduCRM | Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="dashboard-page">
+      <section class="dashboard-shell">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">EduCRM Dashboard</p>
+            <h1 id="welcome-title">Learning Platform</h1>
+            <p id="welcome-subtitle" class="subtitle"></p>
+          </div>
+          <div class="topbar-actions">
+            <span id="role-badge" class="role-badge"></span>
+            <button id="logout-btn" class="ghost-btn" type="button">Logout</button>
+          </div>
+        </header>
+
+        <section class="stats-grid" id="stats-grid"></section>
+
+        <section class="dashboard-grid">
+          <article class="panel panel-wide">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Subjects</p>
+                <h2>Core learning areas</h2>
+              </div>
+            </div>
+            <div id="subjects-grid" class="subject-grid"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Announcements</p>
+                <h2>Latest updates</h2>
+              </div>
+            </div>
+            <div id="announcements-list" class="stack-list"></div>
+          </article>
+
+          <article class="panel panel-wide">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Lessons</p>
+                <h2 id="lessons-title">Published lessons</h2>
+              </div>
+            </div>
+            <form id="lesson-form" class="action-form hidden">
+              <label>
+                Subject
+                <select id="lesson-subject"></select>
+              </label>
+              <label>
+                Lesson title
+                <input id="lesson-title" type="text" maxlength="120" />
+              </label>
+              <label>
+                Summary
+                <input id="lesson-summary" type="text" maxlength="250" />
+              </label>
+              <label>
+                Content
+                <textarea id="lesson-content" rows="4" maxlength="4000"></textarea>
+              </label>
+              <button type="submit">Publish Lesson</button>
+            </form>
+            <p id="lesson-message" class="status-text"></p>
+            <div id="lessons-list" class="lesson-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Quiz Tests</p>
+                <h2>Assess progress</h2>
+              </div>
+            </div>
+            <div id="quiz-list" class="stack-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Results</p>
+                <h2 id="results-title">Performance summary</h2>
+              </div>
+            </div>
+            <div id="results-list" class="stack-list"></div>
+          </article>
+
+          <article class="panel hidden" id="announcement-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Admin Tool</p>
+                <h2>Post announcement</h2>
+              </div>
+            </div>
+            <form id="announcement-form" class="action-form">
+              <label>
+                Title
+                <input id="announcement-title" type="text" maxlength="120" />
+              </label>
+              <label>
+                Audience
+                <select id="announcement-audience">
+                  <option value="all">All users</option>
+                  <option value="teacher">Teachers only</option>
+                  <option value="student">Students only</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea id="announcement-body" rows="4" maxlength="2000"></textarea>
+              </label>
+              <button type="submit">Publish Announcement</button>
+            </form>
+            <p id="announcement-message" class="status-text"></p>
+          </article>
+
+          <article class="panel hidden" id="users-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Admin Tool</p>
+                <h2>Registered users</h2>
+              </div>
+            </div>
+            <div id="users-list" class="stack-list"></div>
+          </article>
+
+          <article class="panel hidden" id="teacher-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Teacher Panel</p>
+                <h2>Assigned subjects</h2>
+              </div>
+            </div>
+            <div id="teacher-subjects" class="stack-list"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="/static/auth.js"></script>
+    <script src="/static/dashboard.js"></script>
+  </body>
+</html>

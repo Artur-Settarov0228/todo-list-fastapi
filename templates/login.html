@@ -1,39 +1,123 @@
 <!doctype html>
-<html lang="uz">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>EduCRM | Login</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
-    <main class="page">
-      <section class="card auth-card">
-        <header class="card__header">
-          <p class="eyebrow">Task Manager</p>
-          <h1>Tizimga kirish</h1>
-          <p class="subtitle">Akkaunt bilan kirib tasklarni boshqaring</p>
-        </header>
-
-        <form id="login-form" class="auth-form">
-          <label>
-            Username
-            <input id="username" type="text" required minlength="3" maxlength="32" />
-          </label>
-          <label>
-            Parol
-            <input id="password" type="password" required minlength="4" maxlength="128" />
-          </label>
-          <button type="submit">Kirish</button>
-        </form>
-
-        <p class="auth-alt">
-          Akkauntingiz yo'qmi? <a href="/register">Registratsiya qiling</a>
+    <main class="page auth-page">
+      <section class="hero-panel">
+        <p class="eyebrow">FastAPI School CRM</p>
+        <h1>Manage classes, lessons, and quiz tests in one platform.</h1>
+        <p class="subtitle hero-copy">
+          EduCRM includes separate panels for administrators, teachers, and students with
+          English, Mathematics, History, and Biology content.
         </p>
-        <p id="message" class="status-text"></p>
+        <div class="hero-grid">
+          <article class="hero-card">
+            <h3>Admin Panel</h3>
+            <p>Track users, publish announcements, and monitor quiz activity.</p>
+          </article>
+          <article class="hero-card">
+            <h3>Teacher Panel</h3>
+            <p>Create subject lessons, review assigned courses, and watch student results.</p>
+          </article>
+          <article class="hero-card">
+            <h3>Student Panel</h3>
+            <p>Study lessons by subject and take online quiz tests with instant scoring.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card auth-shell">
+        <div class="tabs">
+          <button class="tab-btn is-active" data-tab-target="login" type="button">Login</button>
+          <button class="tab-btn" data-tab-target="register" type="button">Register</button>
+        </div>
+
+        <section class="tab-panel is-active" data-tab-panel="login">
+          <header class="card__header">
+            <p class="eyebrow">Secure Access</p>
+            <h2>Sign in to your panel</h2>
+            <p class="subtitle">Choose your role and enter your account details.</p>
+          </header>
+
+          <form id="login-form" class="auth-form">
+            <label>
+              Role
+              <select id="login-role" required>
+                <option value="admin">Admin</option>
+                <option value="teacher">Teacher</option>
+                <option value="student" selected>Student</option>
+              </select>
+            </label>
+            <label>
+              Username
+              <input id="login-username" type="text" required minlength="3" maxlength="32" />
+            </label>
+            <label>
+              Password
+              <input
+                id="login-password"
+                type="password"
+                required
+                minlength="4"
+                maxlength="128"
+              />
+            </label>
+            <button type="submit">Open Dashboard</button>
+          </form>
+
+          <div class="demo-box">
+            <p class="demo-title">Demo accounts</p>
+            <p>`admin / admin123`, `teacher_english / teacher123`, `student_demo / student123`</p>
+          </div>
+          <p id="login-message" class="status-text"></p>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="register">
+          <header class="card__header">
+            <p class="eyebrow">New Account</p>
+            <h2>Create your account</h2>
+            <p class="subtitle">Register as an admin, teacher, or student.</p>
+          </header>
+
+          <form id="register-form" class="auth-form">
+            <label>
+              Full name
+              <input id="register-full-name" type="text" required minlength="3" maxlength="120" />
+            </label>
+            <label>
+              Role
+              <select id="register-role" required>
+                <option value="student" selected>Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+              </select>
+            </label>
+            <label>
+              Username
+              <input id="register-username" type="text" required minlength="3" maxlength="32" />
+            </label>
+            <label>
+              Password
+              <input
+                id="register-password"
+                type="password"
+                required
+                minlength="4"
+                maxlength="128"
+              />
+            </label>
+            <button type="submit">Register Now</button>
+          </form>
+
+          <p id="register-message" class="status-text"></p>
+        </section>
       </section>
     </main>
     <script src="/static/auth.js"></script>
-    <script src="/static/login.js"></script>
   </body>
 </html>
